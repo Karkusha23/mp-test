@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 
 	auto time_start = std::chrono::high_resolution_clock::now();
 
-	#pragma omp parallel for shared(A, B, dy, dy2) private(i, x, y) schedule(static)
+	#pragma omp parallel for shared(A, B, total_size, y_size, dy, dy2) private(i, x, y) schedule(static)
 	for (i = 0; i < total_size; ++i)
 	{
 		x = i / y_size;
