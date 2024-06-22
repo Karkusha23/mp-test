@@ -21,7 +21,6 @@ double foo(double x, double y)
 
 double* generate_grid(fPtr func, double xmin, double xmax, int xcount, double ymin, double ymax, int ycount);
 
-
 __global__ void derivativeKernel(double* A, double* B, int xsize, int ysize, double dy, double dy2)
 {
 	int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -99,7 +98,6 @@ int main(int argc, char* argv[])
 
     return 0;
 }
-
 
 double* generate_grid(fPtr func, double xmin, double xmax, int xcount, double ymin, double ymax, int ycount)
 {
