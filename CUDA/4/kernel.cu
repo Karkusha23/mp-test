@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 
 	auto time_start = std::chrono::high_resolution_clock::now();
 
-    matMultKernel<<<block_count, (m * k) / block_count + 1 >> >(dev_C, dev_A, dev_B, m, n, k);
+    matMultKernel<<<block_count, (m * k) / block_count + 1>>>(dev_C, dev_A, dev_B, m, n, k);
 	cudaDeviceSynchronize();
 
 	auto time_end = std::chrono::high_resolution_clock::now();
